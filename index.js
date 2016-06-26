@@ -20,6 +20,9 @@ function req(method, apiUrl, callback) {
       case 404:
         return callback('NOT_FOUND');
         break;
+      case 500:
+        return callback('SERVER_ERROR');
+        break;
     }
   });
 }
