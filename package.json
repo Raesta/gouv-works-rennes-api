@@ -1,6 +1,6 @@
 {
   "name": "gouv-works-rennes-api",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "gouv-works-rennes-api",
   "main": "index.js",
   "scripts": {
