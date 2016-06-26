@@ -43,6 +43,11 @@ Works.prototype.roadwork = function(params, callback) {
   var url = apiUrl + 'roadwork/' + params.id + '?';
   if (params && params.dim) url = (url.substr(url.length-1, 1) === '?' ? url + 'dim=' + params.dim : url + '&dim=' + params.dim);
   if (params && params.epsg) url = (url.substr(url.length-1, 1) === '?' ? url + 'epsg=' + params.epsg : url + '&epsg=' + params.epsg);
+  req('GET', url, function(error, result) {
+    if (error) return callback(error);
+    else return callback(null, result);
+  });
+}
 }
 
 module.exports = Works;
