@@ -24,4 +24,16 @@ function req(method, apiUrl, callback) {
   });
 }
 
+Works.prototype.roadworks = function(params, callback) {
+  var url = apiUrl + 'roadworks?';
+  if (params && params.epsg) url = (url.substr(url.length-1, 1) === '?' ? url + 'epsg=' + params.epsg : url + '&epsg=' + params.epsg);
+  if (params && params.dim) url = (url.substr(url.length-1, 1) === '?' ? url + 'dim=' + params.dim : url + '&dim=' + params.dim);
+  if (params && params.period) url = (url.substr(url.length-1, 1) === '?' ? url + 'period=' + params.period : url + '&period=' + params.period);
+  if (params && params.city) url = (url.substr(url.length-1, 1) === '?' ? url + 'city=' + params.city : url + '&city=' + params.city);
+  if (params && params.sector) url = (url.substr(url.length-1, 1) === '?' ? url + 'sector=' + params.sector : url + '&sector=' + params.sector);
+  req('GET', url, function(error, result) {
+    if (error) return callback(error);
+    else return callback(null, result);
+  });
+}
 module.exports = Works;

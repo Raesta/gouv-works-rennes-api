@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Raesta/gouv-works-rennes-api/issues"
   },
-  "homepage": "https://github.com/Raesta/gouv-works-rennes-api#readme"
+  "homepage": "https://github.com/Raesta/gouv-works-rennes-api#readme",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
 }
