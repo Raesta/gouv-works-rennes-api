@@ -75,4 +75,14 @@ Works.prototype.roadworkDetour = function(params, callback) {
     else return callback(null, result);
   });
 }
+
+Works.prototype.sectors = function(params, callback) {
+  var url = apiUrl + 'sectors?';
+  if (params && params.format) url = url + 'format=' + params.format;
+  req('GET', url, function(error, result) {
+    if (error) return callback(error);
+    else return callback(null, result);
+  });
+}
+
 module.exports = Works;
